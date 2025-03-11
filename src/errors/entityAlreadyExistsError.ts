@@ -1,6 +1,6 @@
 export class EntityAlreadyExistsError extends Error {
-    constructor(id: number) {
-        super(`Entity #${id} already exists`);
+    constructor(message: string) {
+        super(message);
         this.name = 'EntityAlreadyExistsError';
     }
 }

@@ -1,6 +1,6 @@
 export class EntityNotExistsError extends Error {
-    constructor(id: number) {
-        super(`Entity #${id} not exists`);
+    constructor(message: string) {
+        super(message);
         this.name = 'EntityNotExistsError';
     }
 }

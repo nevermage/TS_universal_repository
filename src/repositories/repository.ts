@@ -5,7 +5,7 @@ export class Repository<T> {
 
     create(id: number, data: T): void {
         if (this.#data[id] !== undefined) {
-            throw new EntityAlreadyExistsError(id);
+            throw new EntityAlreadyExistsError(`Entity #${id} already exists`);
         }
 
         this.#data[id] = data;
@@ -40,7 +40,7 @@ export class Repository<T> {
 
     update(id: number, updates: Partial<T>): void {
         if (this.#data[id] === undefined) {
-            throw new EntityNotExistsError(id);
+            throw new EntityNotExistsError(`Entity #${id} not exists`);
         }
 
         Object.entries(updates).forEach(([key, value]) => {
